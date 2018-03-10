@@ -1,0 +1,74 @@
+{
+    "name": "satou",
+    "description": "A minimal ghost theme.",
+    "demo": "https://blog.khinenw.tk",
+    "version": "1.0.0",
+    "engines": {
+        "ghost": ">=1.2.0"
+    },
+    "license": "MIT",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "watch": "webpack --watch",
+        "build": "webpack"
+    },
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg",
+        "mobile": "assets/screenshot-mobile.jpg"
+    },
+    "author": {
+        "name": "Khinenw",
+        "email": "khi@nenw.moe",
+        "url": "https://nenw.moe"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/HelloWorld017/satou.git"
+    },
+    "bugs": "https://github.com/HelloWorld017/satou/issues",
+    "contributors": "https://github.com/HelloWorld017/satou/graphs/contributors",
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.4",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "babel-preset-env": "^1.6.1",
+        "css-loader": "^0.28.10",
+        "extract-text-webpack-plugin": "^4.0.0-beta.0",
+        "file-loader": "^1.1.11",
+        "less": "^3.0.1",
+        "less-loader": "^4.1.0",
+        "postcss": "^6.0.19",
+        "postcss-cssnext": "^3.1.0",
+        "postcss-loader": "^2.1.1",
+        "style-loader": "^0.20.3",
+        "vue-loader": "^14.2.1",
+        "vue-template-compiler": "^2.5.14",
+        "webpack": "^4.1.1",
+        "webpack-cli": "^2.0.10",
+        "webpack-dev-server": "^3.1.0"
+    },
+    "dependencies": {
+        "babel-runtime": "^6.26.0",
+        "downsize": "0.0.8",
+        "fitvids": "^2.0.0",
+        "mdi": "^2.1.99",
+        "moment": "^2.21.0",
+        "normalize.css": "^8.0.0",
+        "striptags": "^3.1.1",
+        "vue": "^2.5.14",
+        "whatwg-fetch": "^2.0.3"
+    },
+    "config": {
+        "posts_per_page": 25
+    }
+}

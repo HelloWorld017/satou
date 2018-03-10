@@ -1,0 +1,32 @@
+{{#post}}
+
+<header class="header">
+	{{#if feature_image}}
+		<div class="header-background"
+			style="background-image: url({{feature_image}})">
+		</div>
+	{{/if}}
+
+	<div class="header-inner">
+		<nav id="navigation"></nav>
+	</div>
+</header>
+
+<main id="content" class="content" role="main">
+	<article class="post-page {{post_class}}">
+		<header class="post-page-header">
+			<h1 class="post-page-title">{{title}}</h1>
+		</header>
+
+		<section class="post-page-content">
+			{{content}}
+		</section>
+
+	</article>
+</main>
+
+{{/post}}
+
+<script>
+	//TODO fitvids
+</script>

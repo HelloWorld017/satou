@@ -1,0 +1,62 @@
+{{#author}}
+
+<header class="header">
+	{{#if cover_image}}
+		<div class="header-background"
+			style="background-image: url({{cover_image}})">
+		</div>
+	{{/if}}
+	
+	<div class="header-inner">
+		<nav id="navigation"></nav>
+
+		<div class="header-content">
+			<h1 class="header-title">{{name}}</h1>
+
+			{{#if bio}}
+				<h2 class="header-description author-bio">{{bio}}</h2>
+			{{/if}}
+			<div class="author-meta">
+				{{#if location}}
+					<div class="author-location">{{location}} <span class="bull">&bull;</span></div>
+				{{/if}}
+
+				<div class="author-stats">
+					{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+				</div>
+
+				<div class="author-links">
+					{{#if website}}
+						<a class="link" href="{{website}}" target="_blank" rel="noopener">
+							<i class="mdi mdi-web"></i>
+						</a>
+					{{/if}}
+
+					{{#if twitter}}
+						<a class="link" href="{{twitter_url}}" target="_blank" rel="noopener">
+							<i class="mdi mdi-twitter"></i>
+						</a>
+					{{/if}}
+					{{#if facebook}}
+						<a class="link" href="{{facebook_url}}" target="_blank" rel="noopener">
+							<i class="mdi mdi-facebook"></i>
+						</a>
+					{{/if}}
+
+					<a class="link"
+						href="https://feedly.com/i/subscription/feed/{{url absolute="true"}}rss/"
+						target="_blank"
+						rel="noopener">
+
+						<i class="mdi mdi-rss"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+{{/author}}
+
+<main id="content" class="content" role="main">
+	<section id="satou-posts"></section>
+</main>

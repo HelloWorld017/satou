@@ -1,0 +1,230 @@
+<template>
+	<div class="post-card">
+		<template v-if="image">
+			<div class="post-card-image" :style="imageStyle"></div>
+		</template>
+
+		<div class="post-card-content">
+			<header class="post-card-header">
+				<h2 class="post-card-title font-list-serif font-bold">
+					<a :href="url">{{title}}</a>
+				</h2>
+			</header>
+
+			<div class="post-card-footer">
+				<div class="post-card-metadata font-list-sans">
+					<span class="readtime">
+						{{readtime}}
+					</span>
+					<span class="vr-divider"></span>
+					<a class="post-card-author" :href="resolveUrl(`/author/${author.slug}`)">
+						by {{author.name}}
+					</a>
+					<span class="vr-divider"></span>
+					<time class="post-card-date" :datetime="datetime">
+						@ {{datetext}}
+					</time>
+					<span class="vr-divider"></span>
+					<div class="post-card-tags">
+						<a class="post-card-tag" v-for="tag in tags" :href="resolveUrl(`/tag/${tag.slug}`)">
+							#{{tag.slug}}
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<p class="post-card-text font-list-sans">
+				{{computedExcerpt}}
+
+				<button class="read-button">
+					<i class="mdi mdi-chevron-double-right"></i>
+				</button>
+			</p>
+
+		</div>
+	</div>
+</template>
+
+<style lang="less" scoped>
+	.post-card {
+		margin: 60px 0;
+		padding: 10px;
+		display: flex;
+
+		.post-card-image {
+			flex: 0 0 200px;
+
+			margin-right: 30px;
+			background-color: #2c3e50;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.post-card-content {
+			flex: 1;
+			width: 0;
+
+			.post-card-header {
+				display: flex;
+				align-items: baseline;
+
+				.post-card-title {
+					margin: 0;
+					padding-bottom: 5px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					font-size: 1.8rem;
+
+					a {
+						color: #202020;
+						text-decoration: none;
+					}
+				}
+
+				.readtime {
+					color: #808080;
+					white-space: nowrap;
+				}
+			}
+
+			.post-card-text {
+				font-size: 1.1rem;
+				color: #404040;
+
+				button {
+					display: block;
+					border: 3px solid #202020;
+					background: transparent;
+					font-size: 2rem;
+					transform: skewX(-10deg);
+					cursor: pointer;
+					transition: background .4s ease, color .4s ease, transform .4s ease .4s;
+					margin-top: 20px;
+
+					&:hover {
+						transform: skewX(0deg);
+						background: #202020;
+						color: #fff;
+					}
+				}
+			}
+
+			.post-card-footer {
+				.post-card-metadata {
+					margin-top: 5px;
+					margin-bottom: 5px;
+					color: #808080;
+
+					a {
+						color: #00989d;
+						text-decoration: none;
+					}
+
+					.post-card-tags {
+						display: inline-flex;
+					}
+
+					.vr-divider {
+						border-right: 1px solid #c0c0c0;
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	}
+</style>
+
+<script>
+	import fitvids from "fitvids";
+	import excerpt from "../js/excerpt";
+	import readTime from "../js/read-time";
+	import resolveUrl from "../js/resolve-url";
+
+	const minlen = (str, len) => (str.length < len) ? minlen('0' + str, len) : str;
+	const pad2 = (str) => minlen('' + str, 2);
+	const monthString = (num) => [
+		'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+		'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+	][num];
+
+	export default {
+		props: {
+			title: {
+				type: String,
+				required: true
+			},
+
+			slug: {
+				type: String,
+				required: true
+			},
+
+			url: {
+				type: String,
+				required: true
+			},
+
+			image: {},
+
+			html: {
+				type: String,
+				required: true
+			},
+
+			author: {
+				type: Object,
+				required: true
+			},
+
+			tags: {
+				type: Array,
+				required: true
+			},
+
+			index: {
+				type: Number,
+				required: true
+			},
+
+			date: {
+				required: true
+			}
+		},
+
+		computed: {
+			readtime() {
+				return `${readTime(this.html)} to read`;
+			},
+
+			datetime(){
+				return `${this.date.getFullYear()}-${pad2(this.date.getMonth() + 1)}-${pad2(this.date.getDate())}`;
+			},
+
+			datetext(){
+				return `${monthString(this.date.getMonth())} ${pad2(this.date.getDate())}`;
+			},
+
+			imageStyle(){
+				return `background-image: url("${this.image}")`;
+			},
+
+			computedExcerpt(){
+				return `${this.excerpt}…`;
+			},
+
+			excerpt() {
+				return excerpt(this.html, {words: 26});
+			},
+		},
+
+		methods: {
+			resolveUrl
+		},
+
+		mounted() {
+			fitvids(".post-content");
+		}
+	}
+</script>

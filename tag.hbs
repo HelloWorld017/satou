@@ -1,0 +1,27 @@
+{{#tag}}
+<header class="header">
+	{{#if feature_image}}
+		<div class="header-background"
+			style="background-image: url({{feature_image}})">
+		</div>
+	{{/if}}
+
+	<div class="header-inner">
+		<nav id="navigation"></nav>
+		<div class="header-content">
+			<h1 class="header-title">{{name}}</h1>
+			<h2 class="header-description">
+				{{#if description}}
+					{{description}}
+				{{else}}
+					A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
+				{{/if}}
+			</h2>
+		</div>
+	</div>
+</header>
+{{/tag}}
+
+<main id="content" class="content" role="main">
+	<section id="satou-posts"></section>
+</main>

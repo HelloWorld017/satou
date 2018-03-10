@@ -1,0 +1,18 @@
+{
+	"presets": [["env", {
+		"targets": {
+			"uglify": true,
+			"ie": 9,
+			"chrome": 50,
+			"safari": 10
+		}
+	}]],
+
+	"ignore": [
+		"node_modules"
+	],
+
+	"plugins": [
+		"transform-runtime"
+	]
+}
