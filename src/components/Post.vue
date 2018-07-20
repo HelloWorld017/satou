@@ -1,5 +1,5 @@
 <template>
-	<div class="post-card">
+	<a class="post-card" :href="url">
 		<template v-if="image">
 			<div class="post-card-image" :style="imageStyle"></div>
 		</template>
@@ -36,13 +36,13 @@
 			<p class="post-card-text font-list-sans">
 				{{computedExcerpt}}
 
-				<button class="read-button">
+				<a class="post-card-button" :href="url">
 					<i class="mdi mdi-chevron-double-right"></i>
-				</button>
+				</a>
 			</p>
 
 		</div>
-	</div>
+	</a>
 </template>
 
 <style lang="less" scoped>
@@ -50,6 +50,7 @@
 		margin: 60px 0;
 		padding: 10px;
 		display: flex;
+		text-decoration: none;
 
 		.post-card-image {
 			flex: 0 0 200px;
@@ -90,18 +91,23 @@
 			}
 
 			.post-card-text {
-				font-size: 1.1rem;
+				font-size: 0.94rem;
+				margin-top: 30px;
 				color: #404040;
 
-				button {
+				.post-card-button {
 					display: block;
+					width: 60px;
+					text-align: center;
+					color: #202020;
 					border: 3px solid #202020;
 					background: transparent;
 					font-size: 2rem;
 					transform: skewX(-10deg);
 					cursor: pointer;
 					transition: background .4s ease, color .4s ease, transform .4s ease .4s;
-					margin-top: 20px;
+					margin-top: 40px;
+					outline: none;
 
 					&:hover {
 						transform: skewX(0deg);

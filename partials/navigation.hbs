@@ -1,0 +1,8 @@
+{{#foreach navigation}}
+	{
+		url: "{{url absolute="true"}}",
+		slug: "{{slug}}",
+		current: {{#if current}} true {{else}} false {{/if}},
+		text: "{{label}}"
+	},
+{{/foreach}}

@@ -1,7 +1,7 @@
 
 <template>
 	<section id="satou-posts">
-		<h1 class="font-ui-sans font-semilight">
+		<h1 class="font-ui-sans font-light">
 			<i class="mdi mdi-pentagon"></i> Documents
 		</h1>
 
@@ -59,11 +59,11 @@
 			content: '';
 			display: block;
 			background: #f1f2f3;
-			width: 50px;
-			height: 20px;
+			width: 30px;
+			height: 10px;
 
 			position: absolute;
-			top: -12px;
+			top: -5px;
 			left: 50%;
 
 			transform: translateX(-50%);
@@ -72,13 +72,13 @@
 		&::after {
 			content: '';
 			display: block;
-			width: 20px;
-			height: 20px;
+			width: 10px;
+			height: 10px;
 			transform: translateX(-50%) rotate(45deg);
 
 			position: absolute;
 			left: 50%;
-			top: -12px;
+			top: -5px;
 
 			border: 2px solid #808080;
 		}

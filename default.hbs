@@ -17,14 +17,14 @@
 		<div class="satou">
 			{{{body}}}
 
-			<footer class="footer">
+			<footer class="footer font-ui-base">
 				<div class="footer-inner">
 					<span class="copyright">
 						<a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
 					</span>
 
 					<span class="information">
-						Published with <b>Ghost</b>/<i>Satou</i>
+						Proudly published with <b>Ghost</b> / Satou
 					</span>
 				</div>
 			</footer>
@@ -54,9 +54,13 @@
 				configuration: {
 					logo: "{{@blog.logo}}",
 					title: "{{@blog.title}}",
-					baseUrl: "{{@blog.url}}"
+					baseUrl: "{{@blog.url}}",
+					cover: "{{@blog.cover_image}}"
 				},
-				pagination: {}
+				pagination: {},
+				navigation: [
+					{{navigation}}
+				]
 			};
 		</script>
 

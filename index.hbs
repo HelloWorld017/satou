@@ -8,14 +8,12 @@
 	{{/if}}
 
 	<div class="header-inner">
-		<nav id="navigation"></nav>
-
 		<div class="header-content">
 			<h1 class="header-title font-ui-index-title font-light">
 				{{@blog.title}}
 			</h1>
 
-			<h2 class="header-description font-ui-sans font-light">
+			<h2 class="header-description font-ui-sans font-semilight">
 				{{@blog.description}}
 			</h2>
 		</div>
@@ -23,5 +21,7 @@
 </header>
 
 <main id="content" class="content" role="main">
-	<section id="satou-posts"></section>
+	<nav id="navigation"></nav>
+
+	<section id="post-list"></section>
 </main>

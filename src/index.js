@@ -6,26 +6,30 @@ import "whatwg-fetch";
 
 // Vue
 import Vue from "vue";
+import ListNavigation from "./components/ListNavigation.vue";
 import Navigation from "./components/Navigation.vue";
 import PostList from "./components/PostList.vue";
 
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-if($('#navigation')) {
-	new Vue({
-		el: '#navigation',
-		render(h) {
-			return h(Navigation)
-		}
-	});
-}
+const kebabize = text => text[0].toLowerCase() + text.slice(1).replace(/([A-Z])/, (_, p1) => `-${p1.toLowerCase()}`);
 
-if($('#satou-posts')){
-	new Vue({
-		el: '#satou-posts',
-		render(h) {
-			return h(PostList)
-		}
-	});
-}
+const vueMatcher = {
+	ListNavigation,
+	Navigation,
+	PostList
+};
+
+Object.keys(vueMatcher)
+.map(k => [`#${kebabize(k)}`, vueMatcher[k]])
+.forEach(([id, elem]) => {
+	if($(id)) {
+		new Vue({
+			el: id,
+			render(h) {
+				return h(elem);
+			}
+		});
+	}
+});
