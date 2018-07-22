@@ -78,7 +78,7 @@
 
 	.nav-puller {
 		position: fixed;
-		top: 30px;
+		top: 70px;
 		right: 0;
 
 		display: block;
@@ -138,6 +138,10 @@
 
 	#navigation.opened {
 		right: 0;
+
+		.nav-title {
+			box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .3);
+		}
 
 		.nav-puller {
 			color: #fff;
@@ -203,6 +207,7 @@
 		mounted() {
 			this.backdrop = document.createElement('div');
 			this.backdrop.className = 'backdrop';
+			this.backdrop.addEventListener('click', () => this.toggle());
 
 			document.body.appendChild(this.backdrop);
 		},

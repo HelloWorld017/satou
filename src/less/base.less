@@ -1,0 +1,299 @@
+html {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+	font-feature-settings: 'kern' 1;
+	text-rendering: geometricPrecision;
+}
+
+::selection {
+	background: #D6EDFF;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+body::-webkit-scrollbar {
+	width: 16px;
+	height: 16px;
+}
+
+::-webkit-scrollbar-button {
+	width: 0px;
+	height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, .35);
+	border: none;
+	border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, .3);
+}
+
+::-webkit-scrollbar-thumb:active {
+	background: rgba(0, 0, 0, .4);
+}
+
+::-webkit-scrollbar-track {
+	background: #00bcd4;
+	border: none;
+	border-radius: 0px;
+}
+
+::-webkit-scrollbar-track:active {
+	background: #00bcd4;
+}
+
+::-webkit-scrollbar-corner {
+	background: #00bcd4;
+}
+
+* {
+	scrollbar-arrow-color: rgba(0, 0, 0, .35);
+	scrollbar-base-color: #00bcd4;
+	scrollbar-track-color: #00bcd4;
+	scrollbar-face-color: rgba(0, 0, 0, .35);
+	scrollbar-highlight-color: #00bcd4;
+	scrollbar-3dlight-color: #00bcd4;
+	scrollbar-darkshadow-color: #00bcd4;
+	scrollbar-shadow-color: rgba(0, 0, 0, .35);
+}
+
+.post-template, .page-template {
+	h1, h2, h3,
+	h4, h5, h6 {
+		text-rendering: geometricPrecision;
+		margin-top: .83em;
+		margin-bottom: .41em;
+
+		.font-posting-title;
+	}
+
+	h1 {
+		font-size: 3.2rem;
+		letter-spacing: -2px;
+		text-indent: -3px;
+	}
+
+	h2 {
+		font-size: 2.7rem;
+		letter-spacing: -1px;
+	}
+
+	h3 {
+		font-size: 2.2rem;
+		letter-spacing: -0.6px;
+	}
+
+	h4 {
+		font-size: 1.9rem;
+	}
+
+	h5 {
+		font-size: 1.7rem;
+	}
+
+	h6 {
+		font-size: 1.7rem;
+	}
+
+	a {
+		color: #00acc1;
+		transition: color 0.3s ease;
+	}
+
+	a:hover {
+		color: #4A4A4A;
+	}
+
+	p, ul, ol, dl {
+		font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+		margin: 0 0 1.75em 0;
+		text-rendering: geometricPrecision;
+		line-height: 1.7rem;
+	}
+
+	ol, ul {
+		padding-left: 3rem;
+	}
+
+	ol ol, ul ul,
+	ul ol, ol ul {
+		margin: 0 0 0.4em 0;
+		padding-left: 2em;
+	}
+
+	dl dt {
+		float: left;
+		width: 180px;
+		overflow: hidden;
+		clear: left;
+		text-align: right;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		font-weight: 700;
+		margin-bottom: 1em;
+	}
+
+	dl dd {
+		margin-left: 200px;
+		margin-bottom: 1em
+	}
+
+	li {
+		margin: 0.4em 0;
+	}
+
+	li li {
+		margin: 0;
+	}
+
+	li > p:last-of-type {
+		margin-bottom: 0;
+	}
+
+	hr {
+		display: block;
+		height: 1px;
+		border: 0;
+		border-top: #d1d2d3 1px solid;
+		margin: 1.5em 0;
+		padding: 0;
+	}
+
+	blockquote {
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		margin: 1.75em 0 1.75em -2.2em;
+		padding: 0 0 0 1.75em;
+		border-left: #4A4A4A 0.4em solid;
+	}
+
+	blockquote p {
+		margin: 0.8em 0;
+		font-style: italic;
+	}
+
+	blockquote small {
+		display: inline-block;
+		margin: 0.8em 0 0.8em 1.5em;
+		font-size: 0.9em;
+		color: #CCC;
+	}
+
+	blockquote small:before { content: "\2014 \00A0"; }
+
+	blockquote cite {
+		font-weight: 700;
+	}
+
+	blockquote cite a { font-weight: normal; }
+
+	mark {
+		background-color: #fdffb6;
+	}
+
+	code, tt {
+		display: inline-block;
+		color: #222;
+		padding: 1px 3px;
+		font-size: 0.9em;
+		white-space: pre-wrap;
+		background: #e1e2e3;
+		border-radius: 6px;
+	}
+
+	pre {
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		border: #d1d2d3 1px solid;
+		width: 100%;
+		padding: 10px;
+		font-size: 0.9em;
+		white-space: pre;
+		overflow: auto;
+		background: #F1f2f3;
+	}
+
+	pre code, pre tt {
+		font-size: inherit;
+		white-space: pre-wrap;
+		background: transparent;
+		border: none;
+		padding: 0;
+	}
+
+	kbd {
+		display: inline-block;
+		padding: 1px 8px;
+		color: #222;
+		font-size: 0.9em;
+		background: #e1e2e3;
+		border-radius: 6px;
+	}
+
+	code, kbd, pre, samp {
+		.font-code;
+		font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+	}
+
+	table {
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		margin: 1.75em 0;
+		width: 100%;
+		max-width: 100%;
+		background-color: transparent;
+	}
+
+	table th,
+	table td {
+		padding: 8px;
+		line-height: 20px;
+		text-align: left;
+		vertical-align: top;
+		border-top: #e1e2e3 1px solid;
+	}
+
+	table th { color: #000; }
+
+	table caption + thead tr:first-child th,
+	table caption + thead tr:first-child td,
+	table colgroup + thead tr:first-child th,
+	table colgroup + thead tr:first-child td,
+	table thead:first-child tr:first-child th,
+	table thead:first-child tr:first-child td {
+		border-top: 0;
+	}
+
+	table tbody + tbody { border-top: #e1e2e3 2px solid; }
+
+	table table table { background-color: #FFF; }
+
+	table tbody > tr:nth-child(odd) > td,
+	table tbody > tr:nth-child(odd) > th {
+		background-color: #F6F6F6;
+	}
+
+	table.plain tbody > tr:nth-child(odd) > td,
+	table.plain tbody > tr:nth-child(odd) > th {
+		background: transparent;
+	}
+
+	iframe, .fluid-width-video-wrapper {
+		display: block;
+		margin: 1.75em 0;
+	}
+
+	/* When a video is inside the fitvids wrapper, drop the
+	margin on the iframe, cause it breaks stuff. */
+	.fluid-width-video-wrapper iframe {
+		margin: 0;
+	}
+}

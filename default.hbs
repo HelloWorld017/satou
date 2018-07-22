@@ -12,6 +12,21 @@
 
 		{{ghost_head}}
 
+		<script>
+			window.satou = {
+				configuration: {
+					logo: "{{@blog.logo}}",
+					icon: "{{@blog.icon}}",
+					title: "{{@blog.title}}",
+					baseUrl: "{{@blog.url}}",
+					cover: "{{@blog.cover_image}}"
+				},
+				pagination: {},
+				navigation: [
+					{{navigation}}
+				]
+			};
+		</script>
 	</head>
 	<body class="{{body_class}}">
 		<div class="satou">
@@ -48,21 +63,6 @@
 				</div>
 			</div>
 		{{/if}}
-
-		<script>
-			window.satou = {
-				configuration: {
-					logo: "{{@blog.logo}}",
-					title: "{{@blog.title}}",
-					baseUrl: "{{@blog.url}}",
-					cover: "{{@blog.cover_image}}"
-				},
-				pagination: {},
-				navigation: [
-					{{navigation}}
-				]
-			};
-		</script>
 
 		{{#is "tag"}}
 			<script>

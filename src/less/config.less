@@ -1,5 +1,4 @@
 // Disable Background in header
-
 .header-background {
 	display: none;
 }
@@ -12,4 +11,14 @@
 // No diagonal navigation
 #navigation::after{
 	display: none !important;
+}
+
+// Post Card Image after
+.post-card {
+	flex-direction: row-reverse;
+
+	&-image {
+		margin-right: 0;
+		margin-left: 30px;
+	}
 }

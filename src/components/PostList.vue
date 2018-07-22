@@ -13,11 +13,12 @@
 							:title="post.title"
 							:slug="post.slug"
 							:html="post.html"
-							:author="post.author"
+							:authors="post.authors"
 							:image="post.image"
 							:tags="post.tags"
 							:url="post.url"
 							:date="new Date(post.published_at)"
+							:customExcerpt="post.custom_excerpt"
 							:index="post.index">
 						</post>
 
@@ -119,7 +120,7 @@
 				const query = {
 					limit: this.limit,
 					page: this.pagination + 1,
-					include: "author,tags"
+					include: "authors,tags"
 				};
 				if(this.context === 'tag' || this.context === 'author')
 					query.filter = `${this.context}:${this.contextData}`;

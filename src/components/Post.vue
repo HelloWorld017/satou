@@ -17,8 +17,11 @@
 						{{readtime}}
 					</span>
 					<span class="vr-divider"></span>
-					<a class="post-card-author" :href="resolveUrl(`/author/${author.slug}`)">
-						by {{author.name}}
+					<span>by </span>
+					<a class="post-card-author" v-for="author, i in authors"
+						:href="resolveUrl(`/author/${author.slug}`)">
+
+						<span>{{author.name}}</span><span v-if="i !== authors.length - 1">, </span>
 					</a>
 					<span class="vr-divider"></span>
 					<time class="post-card-date" :datetime="datetime">
@@ -179,8 +182,8 @@
 				required: true
 			},
 
-			author: {
-				type: Object,
+			authors: {
+				type: Array,
 				required: true
 			},
 
@@ -196,7 +199,9 @@
 
 			date: {
 				required: true
-			}
+			},
+
+			customExcerpt: {}
 		},
 
 		computed: {
@@ -217,7 +222,7 @@
 			},
 
 			computedExcerpt(){
-				return `${this.excerpt}…`;
+				return this.customExcerpt ? this.customExcerpt : `${this.excerpt}…`;
 			},
 
 			excerpt() {
