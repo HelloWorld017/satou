@@ -30,8 +30,6 @@
 		<pagination-trigger
 			:pagination="pagination"
 			:pages="pages"
-			:context="context"
-			:context-data="contextData"
 			:load-next="nextPage">
 		</pagination-trigger>
 	</section>
@@ -111,32 +109,28 @@
 			};
 		},
 
-		mounted(){
-			this.nextPage();
-		},
-
 		methods: {
-			nextPage(){
+			async nextPage(){
 				const query = {
 					limit: this.limit,
 					page: this.pagination + 1,
 					include: "authors,tags"
 				};
+
 				if(this.context === 'tag' || this.context === 'author')
 					query.filter = `${this.context}:${this.contextData}`;
-				fetch(ghost.url.api('posts', query))
-				.then((v) => v.json())
-				.then((v) => {
-					this.pagination = v.meta.pagination.page;
-					this.pages = v.meta.pagination.pages;
-					this.posts.push(...v.posts.map((v, k) => {
-						v.index = k;
-						v.url = resolveUrl(v.url);
-						if(v.image) v.image = resolveUrl(v.image);
-						if(v.feature_image) v.image = resolveUrl(v.feature_image);
-						return v;
-					}));
-				});
+
+				const v = await fetch(ghost.url.api('posts', query)).then((v) => v.json())
+
+				this.pagination = v.meta.pagination.page;
+				this.pages = v.meta.pagination.pages;
+				this.posts.push(...v.posts.map((v, k) => {
+					v.index = k;
+					v.url = resolveUrl(v.url);
+					if(v.image) v.image = resolveUrl(v.image);
+					if(v.feature_image) v.image = resolveUrl(v.feature_image);
+					return v;
+				}));
 			}
 		}
 	}

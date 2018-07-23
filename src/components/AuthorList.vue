@@ -1,33 +1,25 @@
 <template>
 	<div id="author-list">
-		<div class="author-wrapper">
-			<div class="author-list-item font-ui-base" v-for="author in authors">
-				<template>
-					<img class="author-profile-image" v-if="author.profile_image" :src="author.profile_image">
-					<img class="author-profile-image default-image" v-else :src="defaultAvatar">
-				</template>
+		<div class="author-list-item font-ui-base" v-for="author in authors">
+			<template>
+				<img class="author-profile-image" v-if="author.profile_image" :src="author.profile_image">
+				<img class="author-profile-image default-image" v-else :src="defaultAvatar">
+			</template>
 
-				<div class="author-profile">
-					<h2>{{author.name}}</h2>
-					<p v-if="author.bio" v-html="author.bio"></p>
-					<p v-else>Read <a :href="author.url">more posts</a> by this author.</p>
-				</div>
-				<a :href="author.url" class="author-more">
-					Read More
-				</a>
+			<div class="author-profile">
+				<h2>{{author.name}}</h2>
+				<p v-if="author.bio" v-html="author.bio"></p>
+				<p v-else>Read <a :href="author.url">more posts</a> by this author.</p>
 			</div>
+			<a :href="author.url" class="author-more">
+				Read More
+			</a>
 		</div>
 	</div>
 </template>
 
 <style lang="less" scoped>
 	#author-list {
-		background: #f1f2f3;
-		padding: 0 10vw;
-	    margin-top: 10vh;
-	}
-
-	.author-wrapper {
 		padding: 40px;
 		padding-top: 100px;
 	}

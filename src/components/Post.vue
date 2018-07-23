@@ -6,13 +6,13 @@
 
 		<div class="post-card-content">
 			<header class="post-card-header">
-				<h2 class="post-card-title font-list-serif font-bold">
+				<h2 class="post-card-title font-list-title font-bold">
 					<a :href="url">{{title}}</a>
 				</h2>
 			</header>
 
 			<div class="post-card-footer">
-				<div class="post-card-metadata font-list-sans">
+				<div class="post-card-metadata font-list-content">
 					<span class="readtime">
 						{{readtime}}
 					</span>
@@ -25,9 +25,9 @@
 					</a>
 					<span class="vr-divider"></span>
 					<time class="post-card-date" :datetime="datetime">
-						@ {{datetext}}
+						@{{datetext}}
 					</time>
-					<span class="vr-divider"></span>
+					<span class="vr-divider" v-if="tags.length > 0"></span>
 					<div class="post-card-tags">
 						<a class="post-card-tag" v-for="tag in tags" :href="resolveUrl(`/tag/${tag.slug}`)">
 							#{{tag.slug}}
@@ -36,7 +36,7 @@
 				</div>
 			</div>
 
-			<p class="post-card-text font-list-sans">
+			<p class="post-card-text font-list-content">
 				{{computedExcerpt}}
 
 				<a class="post-card-button" :href="url">
@@ -56,7 +56,8 @@
 		text-decoration: none;
 
 		.post-card-image {
-			flex: 0 0 200px;
+			flex: 0 0 150px;
+			height: 150px;
 
 			margin-right: 30px;
 			background-color: #2c3e50;

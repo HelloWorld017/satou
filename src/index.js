@@ -15,6 +15,9 @@ import PostList from "./components/PostList.vue";
 // Prism
 import "./js/prism";
 
+// Fitvids
+import fitvids from "fitvids";
+
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -39,4 +42,8 @@ Object.keys(vueMatcher)
 			}
 		});
 	}
+});
+
+document.addEventListener('load', () => {
+	if($('.post-full-content')) fitvids('.post-full-content');
 });

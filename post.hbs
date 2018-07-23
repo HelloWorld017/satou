@@ -33,17 +33,15 @@ into the {body} of the default.hbs template --}}
 				</section>
 			</section>
 
-			{{!-- Email subscribe form at the bottom of the page --}}
-			{{#if @labs.subscribers}}
-			<section class="subscribe-form">
-				<h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
-				<p>Get the latest posts delivered right to your inbox</p>
-				{{subscribe_form placeholder="youremail@example.com"}}
-			</section>
-			{{/if}}
-
 			<footer class="post-full-footer">
-				{{!-- Everything inside the #author tags pulls data from the author --}}
+				{{#if @labs.subscribers}}
+				<section class="subscribe-form">
+					<h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
+					<p>Get the latest posts delivered right to your inbox</p>
+					{{subscribe_form placeholder="youremail@example.com"}}
+				</section>
+				{{/if}}
+
 				<div id="author-list"></div>
 			</footer>
 
@@ -95,13 +93,6 @@ into the {body} of the default.hbs template --}}
 <div id="floating-header"></div>
 
 <script>
-	/*jQuery(document).ready(function () {
-		// Start fitVids
-		var $postContent = $(".post-full-content");
-		$postContent.fitVids();
-		// End fitVids
-	});*/
-
 	window.satou.post = {
 		title: "{{title}}",
 		url: "{{url absolute="true"}}",

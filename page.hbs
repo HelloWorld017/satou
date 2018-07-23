@@ -1,29 +1,48 @@
+{{!< default}}
+
 {{#post}}
 
-<header class="header">
-	{{#if feature_image}}
-		<div class="header-background"
-			style="background-image: url({{feature_image}})">
-		</div>
-	{{/if}}
-
+<header class="header" {{#if feature_image}}style="background-image: url({{feature_image}})"{{/if}}>
 	<div class="header-inner">
 		<nav id="navigation"></nav>
 	</div>
 </header>
 
-<main id="content" class="content" role="main">
-	<article class="post-page {{post_class}}">
-		<header class="post-page-header">
-			<h1 class="post-page-title">{{title}}</h1>
-		</header>
+<main id="site-main" class="site-main outer" role="main">
+	<div class="inner">
+		<article class="post-full font-posting post-page {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
+			<section class="post-wrapper">
+				<header class="post-page-header post-full-header">
+					<h1 class="post-page-title post-full-title font-posting-title">{{title}}</h1>
+				</header>
 
-		<section class="post-page-content">
-			{{content}}
-		</section>
+				<section class="post-page-content post-full-content">
+					{{content}}
+				</section>
+			</section>
 
-	</article>
+		</article>
+	</div>
 </main>
+
+<div id="floating-header"></div>
+
+<script>
+	window.satou.post = {
+		title: "{{title}}",
+		url: "{{url absolute="true"}}",
+		authors: [
+			{{#foreach authors}}
+			{
+				profile_image: "{{profile_image}}",
+				bio: `{{bio}}`,
+				url: "{{url}}",
+				name: "{{name}}"
+			},
+			{{/foreach}}
+		]
+	};
+</script>
 
 {{/post}}
 
