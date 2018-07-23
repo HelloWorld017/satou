@@ -18,31 +18,46 @@
 	font-weight: 700;
 }
 
+:root {
+	--font-ui-index-title: "Exo", "NanumSquare", sans-serif;
+	--font-ui-index-title-sub: "SpoqaHanSansJP", "아리따-돋움(TTF)", sans-serif;
+	--font-ui-base: "Roboto", "NanumSquare", sans-serif;
+	--font-posting-title: "Roboto", "NanumSquare", sans-serif;
+	--font-list-serif: "Noto Serif CJK KR", serif;
+	--font-list-sans: "Roboto", sans-serif;
+	--font-posting: 'Noto Sans CJK KR', sans-serif;
+	--font-code: 'Fira Code', 'D2Coding', monospace;
+}
+
 .font-ui-index-title {
-	font-family: "Exo", sans-serif;
+	font-family: var(--font-ui-index-title);
 }
 
-.font-ui-sans {
-	font-family: "SpoqaHanSansJP", "아리따-돋움(TTF)", sans-serif;
+.font-ui-index-title-sub {
+	font-family: var(--font-ui-index-title-sub);
 }
 
-.font-ui-base, .font-posting-title {
-	font-family: "Roboto", "NanumSquare", sans-serif;
+.font-ui-base {
+	font-family: var(--font-ui-base);
+}
+
+.font-posting-title {
+	font-family: var(--font-posting-title);
 }
 
 .font-list-serif {
-	font-family: "Noto Serif CJK KR", serif;
+	font-family: var(--font-list-serif);
 }
 
 .font-list-sans {
-	font-family: "Roboto", sans-serif;
+	font-family: var(--font-list-sans);
 }
 
 .font-posting {
 	//font-family: 'KoPubDotum', sans-serif; // has Hinting Issue
-	font-family: 'Noto Sans CJK KR', sans-serif;
+	font-family: var(--font-posting);
 }
 
 .font-code {
-	font-family: 'Fira Code', 'D2Coding', monospace;
+	font-family: var(--font-code);
 }

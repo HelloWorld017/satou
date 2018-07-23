@@ -3,6 +3,12 @@
 	height: auto;
 }
 
+.background-header {
+	#navigation:not(.opened) .nav-puller:not(:hover) {
+		background: rgba(255, 255, 255, .8);
+	}
+}
+
 .for(@i, @n) {.-each(@i)}
 .for(@n)     when (isnumber(@n)) {.for(1, @n)}
 .for(@i, @n) when not (@i = @n)  {

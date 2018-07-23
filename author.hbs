@@ -1,3 +1,5 @@
+{{!< default}}
+
 {{#author}}
 
 <header class="header">
@@ -11,17 +13,32 @@
 		<nav id="navigation"></nav>
 
 		<div class="header-content">
-			<h1 class="header-title">{{name}}</h1>
+			<h1 class="author-name header-title font-light font-ui-index-title">
+				<img {{#if profile_image}}
+						src="{{profile_image}}"
+					{{else}}
+						src="/assets/files/src/images/avatar.svg" style="background: #eaebec"
+					{{/if}}
+				class="author-image" alt="{{name}}'s Profile Image">
+
+				{{name}}
+			</h1>
 
 			{{#if bio}}
-				<h2 class="header-description author-bio">{{bio}}</h2>
+				<h2 class="author-bio header-description font-semilight font-ui-index-title-sub author-bio">
+					{{bio}}
+				</h2>
 			{{/if}}
 			<div class="author-meta">
 				{{#if location}}
-					<div class="author-location">{{location}} <span class="bull">&bull;</span></div>
+					<div class="author-location">
+						<i class="mdi mdi-map-marker"></i>
+						{{location}}
+					</div>
 				{{/if}}
 
 				<div class="author-stats">
+					<i class="mdi mdi-signal"></i>
 					{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
 				</div>
 

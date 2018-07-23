@@ -3,36 +3,34 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<header class="header">
+{{#post}}
+
+<header class="header" {{#if feature_image}}style="background-image: url({{feature_image}})"{{/if}}>
 	<div class="header-inner">
 		<nav id="navigation"></nav>
 	</div>
 </header>
 
-{{!-- Everything inside the #post tags pulls data from the post --}}
-{{#post}}
-
 <main id="site-main" class="site-main outer" role="main">
 	<div class="inner">
 
 		<article class="post-full font-posting {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
-			<header class="post-full-header">
-				<section class="post-full-meta">
-					<time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
-					{{#primary_tag}}
-						<span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
-					{{/primary_tag}}
+			<section class="post-wrapper">
+				<header class="post-full-header">
+					<section class="post-full-meta">
+						<time class="post-full-meta-date" datetime="{{date format="YYYY-MM-DD"}}">
+							{{date format="D MMMM YYYY"}}
+						</time>
+						{{#primary_tag}}
+							<span class="date-divider">/</span> <a href="{{url}}">{{name}}</a>
+						{{/primary_tag}}
+					</section>
+					<h1 class="post-full-title font-posting-title">{{title}}</h1>
+				</header>
+
+				<section class="post-full-content">
+					{{content}}
 				</section>
-				<h1 class="post-full-title font-posting-title">{{title}}</h1>
-			</header>
-
-			{{#if feature_image}}
-			<figure class="post-full-image" style="background-image: url({{feature_image}})">
-			</figure>
-			{{/if}}
-
-			<section class="post-full-content">
-				{{content}}
 			</section>
 
 			{{!-- Email subscribe form at the bottom of the page --}}
@@ -54,6 +52,7 @@ into the {body} of the default.hbs template --}}
 			If you use Disqus comments, just uncomment this block.
 			The only thing you need to change is "test-apkdzgmqhj" - which
 			should be replaced with your own Disqus site-id.
+			--}}
 
 			<section class="post-full-comments">
 				<div id="disqus_thread"></div>
@@ -70,7 +69,6 @@ into the {body} of the default.hbs template --}}
 					})();
 				</script>
 			</section>
-			--}}
 
 		</article>
 

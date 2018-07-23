@@ -112,7 +112,7 @@
 
 	.progress {
 		width: 100%;
-		height: 2px;
+		height: 4px;
 		border: none;
 		background: transparent;
 
@@ -137,7 +137,7 @@
 		left: 0;
 		display: block;
 		width: 100%;
-		height: 3px;
+		height: 4px;
 		background-color: transparent;
 	}
 

@@ -1,5 +1,5 @@
 // Disable Background in header
-.header-background {
+.index-header .header-background {
 	display: none;
 }
 
@@ -20,5 +20,18 @@
 	&-image {
 		margin-right: 0;
 		margin-left: 30px;
+	}
+}
+
+// Author Image multiline
+.author-template .author {
+	&-name {
+		flex-direction: column;
+	}
+
+	&-image {
+		margin-right: 0;
+		width: 80px;
+		height: 80px;
 	}
 }

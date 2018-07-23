@@ -26,6 +26,8 @@
 </template>
 
 <style lang="less" scoped>
+	@import "../less/fonts.less";
+
 	#navigation {
 		width: 400px;
 		height: 100vh;
@@ -72,7 +74,10 @@
 			height: 20vh;
 			padding: 10px;
 			color: #fff;
-			margin: 0
+			margin: 0;
+			font-size: 2rem;
+
+			.font-ui-index-title;
 		}
 	}
 
