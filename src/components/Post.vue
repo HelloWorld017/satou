@@ -36,13 +36,11 @@
 				</div>
 			</div>
 
-			<p class="post-card-text font-list-content">
-				{{computedExcerpt}}
+			<p class="post-card-text font-list-content" v-html="computedExcerpt"></p>
 
-				<a class="post-card-button" :href="url">
-					<i class="mdi mdi-chevron-double-right"></i>
-				</a>
-			</p>
+			<a class="post-card-button" :href="url">
+				<i class="mdi mdi-chevron-double-right"></i>
+			</a>
 
 		</div>
 	</a>
