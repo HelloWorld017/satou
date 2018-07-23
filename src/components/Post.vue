@@ -134,6 +134,10 @@
 
 					.post-card-tags {
 						display: inline-flex;
+
+						.post-card-tag:not(:last-child) {
+							margin-right: 3px;
+						}
 					}
 
 					.vr-divider {

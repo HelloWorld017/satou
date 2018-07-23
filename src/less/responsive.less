@@ -12,7 +12,13 @@
 		}
 	}
 
-	.post-template .post-full, .page-template .post-full {
-		margin-top: 0;
+	.post-template, .page-template {
+		.post-full:not(.no-image) {
+			margin-top: 0;
+		}
+	}
+
+	body:not(.post-template, .page-template) #navigation .nav-puller {
+		top: 20px;
 	}
 }
