@@ -8,7 +8,7 @@
 			<h1 class="font-ui-index-title font-normal">{{title}}</h1>
 		</div>
 
-		<div class="nav-list font-list-sans">
+		<div class="nav-list font-list-content">
 
 			<a v-for="nav, i in navigations"
 				:key="nav.slug"
@@ -17,9 +17,8 @@
 					'nav-item',
 					`nav-${nav.slug}`,
 					{'nav-current': nav.current}
-				]">
+				]" v-html="nav.text">
 
-				{{nav.text}}
 			</a>
 		</div>
 	</nav>

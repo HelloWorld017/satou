@@ -95,7 +95,7 @@
 			}
 
 			.post-card-text {
-				font-size: 0.94rem;
+				font-size: 1.2rem;
 				margin-top: 30px;
 				color: #404040;
 

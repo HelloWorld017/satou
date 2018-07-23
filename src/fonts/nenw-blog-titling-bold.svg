@@ -1,0 +1,47 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20170731 at Mon Jul 23 20:56:35 2018
+ By Aleksey,,,
+Typeface ?(your company). 2018. All Rights Reserved
+</metadata>
+<defs>
+<font id="NenwBlogTitling-Bold" horiz-adv-x="569" >
+  <font-face 
+    font-family="NenwBlogTitling-Bold"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="2048"
+    panose-1="2 0 0 0 0 0 0 0 0 0"
+    ascent="1638"
+    descent="-410"
+    x-height="1094"
+    bbox="38 -12 1592 1501"
+    underline-thickness="150"
+    underline-position="-442"
+    unicode-range="U+0020-0077"
+  />
+<missing-glyph horiz-adv-x="1536" 
+d="M256 0v1280h1024v-1280h-1024zM288 32h960v1216h-960v-1216z" />
+    <glyph glyph-name=".notdef" horiz-adv-x="1536" 
+d="M256 0v1280h1024v-1280h-1024zM288 32h960v1216h-960v-1216z" />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" 
+ />
+    <glyph glyph-name="space" unicode=" " 
+ />
+    <glyph glyph-name="space" unicode="&#xa0;" 
+ />
+    <glyph glyph-name="asterisk" unicode="*" horiz-adv-x="925" 
+d="M388 1481l64 20l133 -254l-92 -39zM544 1143l234 170l39 -56l-209 -188zM112 1196v66l289 18l4 -96zM255 844l62 276l96 -20l-96 -277zM448 989l49 86l240 -174l-39 -53z" />
+    <glyph glyph-name="e" unicode="e" horiz-adv-x="1107" 
+d="M299.5 39q-97.5 51 -140.5 172t-43 338q0 219 44 340t142.5 170t272.5 49q149 0 239 -33t133 -111.5t43 -218.5q0 -139 -80.5 -201.5t-230.5 -62.5h-401q2 -141 28.5 -218t98 -112.5t207.5 -35.5h352v-99q-111 -14 -197 -21t-194 -7q-176 0 -273.5 51zM665 588
+q94 0 137 34.5t43 120.5q0 138 -60.5 190t-209.5 52q-119 0 -182.5 -35t-90 -118.5t-26.5 -243.5h389z" />
+    <glyph glyph-name="n" unicode="n" horiz-adv-x="1204" 
+d="M155 1094h127l35 -121q86 59 190.5 99t208.5 40q170 0 254 -104.5t84 -264.5v-743h-162v725q0 106 -60.5 173t-166.5 67q-98 0 -175 -26t-173 -81v-858h-162v1094z" />
+    <glyph glyph-name="w" unicode="w" horiz-adv-x="1632" 
+d="M38 1094h166l268 -942l277 942h141l276 -942l261 942h165l-329 -1094h-178l-269 877l-270 -877h-176z" />
+  </font>
+</defs></svg>

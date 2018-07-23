@@ -1,7 +1,7 @@
 
 <template>
 	<section id="satou-posts">
-		<h1 class="font-ui-index-title-sub font-light">
+		<h1 class="font-ui-base font-semilight">
 			<i class="mdi mdi-pentagon"></i> Documents
 		</h1>
 
