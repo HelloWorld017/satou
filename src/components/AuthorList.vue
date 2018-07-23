@@ -7,7 +7,7 @@
 			</template>
 
 			<div class="author-profile">
-				<h2>{{author.name}}</h2>
+				<h2 v-html="author.name"></h2>
 				<p v-if="author.bio" v-html="author.bio"></p>
 				<p v-else>Read <a :href="author.url">more posts</a> by this author.</p>
 			</div>
@@ -20,8 +20,8 @@
 
 <style lang="less" scoped>
 	#author-list {
-		padding: 40px;
 		padding-top: 100px;
+		padding-bottom: 40px;
 	}
 
 	.author-list-item {

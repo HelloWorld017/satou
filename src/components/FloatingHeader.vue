@@ -7,7 +7,7 @@
 					{{blogTitle}}
 				</a>
 				<span class="floating-header-divider">&mdash;</span>
-				<div class="floating-header-title">{{title}}</div>
+				<div class="floating-header-title" v-html="title"></div>
 			</div>
 			<div class="floating-header-share">
 				<a class="floating-header-share-tw"
