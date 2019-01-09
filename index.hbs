@@ -24,4 +24,11 @@
 	<nav id="navigation"></nav>
 
 	<section id="post-list"></section>
+	<div class="search-engine-optimization">
+		{{#foreach posts}}
+			<a href="{{url}}">{{title}}</a>
+		{{/foreach}}
+
+		{{pagination}}
+	</div>
 </main>
